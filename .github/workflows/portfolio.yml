@@ -23,3 +23,12 @@ jobs:
 
       - name: Validate HTML
         run: npx --yes htmlhint@1.9.2 "**/*.html"
+
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Validate GitHub Actions workflow
+        uses: raven-actions/actionlint@v2
